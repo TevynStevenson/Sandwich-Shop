@@ -19,13 +19,25 @@ public class SandwichShop {
         int sandwich = sandwichShop.nextInt();
 
         //Add if statement
+        double price = 5.45;
+        double price2 = 8.95;
+
         if (sandwich == 1) {
-            System.out.println("Price is $5.45");
+            price = 5.45;
+            System.out.printf("Price is $%.2f\n", price);
         } else if (sandwich == 2) {
-            System.out.println(("Price is $8.95"));
+            price2 = 8.95;
+            System.out.printf(("Price is $%.2f\n" ), price2);
         }else{
             System.out.println("Try again");
+
         }
+
+        // import new scanner
+        // Ask the customer for their age
+        System.out.println("How old are you?");
+        int age = sandwichShop.nextInt();
+
 
     }
 
