@@ -18,7 +18,35 @@ public class SandwichShop {
         System.out.println("Input size");
         int size = sandwichShop.nextInt();
 
-        // Ask user for their name
+        //Ask user if they would like their sandwich loaded
+        //Import new scanner
+
+        System.out.println("""
+                Would you like your sandwich loaded?If so there is additional cost of $1.00
+                Yes
+                No""");
+        String choice = sandwichShop.nextLine();
+
+        //Ask user for their selection
+        System.out.println("Input answer");
+        String name = sandwichShop.nextLine();
+
+        //Declare variables
+        String answer = "Yes";
+        String answer2 = "No";
+        Double price1 = 0.0;
+        Double price2 = 0.0;
+
+        //Add if statements
+        if(answer == "Yes"){
+            price1 = 6.45;
+            price2 = 9.95;
+        } else if (answer2 == "No") {
+            price1 = 5.45;
+            price2 = 8.95;
+        }
+
+        // Ask user for their age
         // Import new scanner
 
         System.out.println("""
