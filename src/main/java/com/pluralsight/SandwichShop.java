@@ -38,6 +38,22 @@ public class SandwichShop {
         System.out.println("How old are you?");
         int age = sandwichShop.nextInt();
 
+        // declare double
+        double discount = 0;
+        double discount1 = 0;
+
+        //Add if statement 
+        if(age <=17){
+            discount = .10;
+            System.out.println("You received a 10% discount");
+        } else if (age >= 65) {
+            discount1 = .20;
+            System.out.println("You received a 10% discount");
+            
+        } else {
+            System.out.println("No discount included");
+        }
+
 
     }
 
