@@ -12,11 +12,11 @@ public class SandwichShop {
 
         System.out.println("""
                 What size sandwich?
-                Regular - $5.45
-                Large - $8.95""");
+                1 - $5.45
+                2 - $8.95""");
         // Ask user for their selection
         System.out.println("Input size");
-        String name = sandwichShop.nextLine();
+        int size = sandwichShop.nextInt();
 
         // Ask user for their name
         // Import new scanner
@@ -28,20 +28,31 @@ public class SandwichShop {
         int age = sandwichShop.nextInt();
 
         //Inputting sandwich price
-
-
         // Set variables
-        int userAge ;
+
+
         double discount = 0.0;
         double total = 0.0;
         double regularPrice = 5.45;
         double largePrice = 8.95;
 
-        if(name.equals("Regular")){
+        if(size == 1){
             total = regularPrice;
-        } else if (name.equals("Large")) {
+        } else if (size == 2) {
             total = largePrice;
         }
+
+        //Calculate total
+        if(age <= 17){
+            discount = .10;
+        }else if (age >= 65){
+            discount = .25;
+        }
+
+        //Total
+        total = total - (total * discount);
+        System.out.printf("Total: $%.2f%n", total);
+
 
 
 
