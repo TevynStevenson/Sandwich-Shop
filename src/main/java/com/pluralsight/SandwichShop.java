@@ -77,7 +77,27 @@ public class SandwichShop {
             discount = .25;
         }
 
+        // Declare variables for loaded sandwich
+        double regularloadedSandwich = 6.45;
+        double largeloadedSandwich = 9.95;
+        double total1;
+        double discount1 = 0.0;
+
+        // Add if statements for total
+        if(answer == "Yes"){
+            total1 = regularloadedSandwich - (regularloadedSandwich * discount);
+        } else if (answer == "No") {
+            total1 = regularPrice;
+        }
+
+        // Total
+        if(size == 1 && age <= 17 && answer == "Yes")
+        total1 = regularloadedSandwich - (regularloadedSandwich * discount);
+        System.out.printf("Total: $%.2f%n", total1);
+
+
         //Total
+        if(size == 1 && age <= 17 && answer == "Yes")
         total = total - (total * discount);
         System.out.printf("Total: $%.2f%n", total);
 
