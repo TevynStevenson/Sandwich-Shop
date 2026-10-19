@@ -17,6 +17,7 @@ public class SandwichShop {
         // Ask user for their selection
         System.out.println("Input size");
         int size = sandwichShop.nextInt();
+        sandwichShop.nextLine();
 
         //Ask user if they would like their sandwich loaded
         //Import new scanner
@@ -27,24 +28,6 @@ public class SandwichShop {
                 No""");
         String choice = sandwichShop.nextLine();
 
-        //Ask user for their selection
-        System.out.println("Input answer");
-        String name = sandwichShop.nextLine();
-
-        //Declare variables
-        String answer = "Yes";
-        String answer2 = "No";
-        Double price1 = 0.0;
-        Double price2 = 0.0;
-
-        //Add if statements
-        if(answer == "Yes"){
-            price1 = 6.45;
-            price2 = 9.95;
-        } else if (answer2 == "No") {
-            price1 = 5.45;
-            price2 = 8.95;
-        }
 
         // Ask user for their age
         // Import new scanner
@@ -63,12 +46,20 @@ public class SandwichShop {
         double total = 0.0;
         double regularPrice = 5.45;
         double largePrice = 8.95;
+        double regularPrice1 = 6.45;
+        double largePrice1 = 9.95;
 
-        if(size == 1){
+        if(size == 1 && choice.equals("Yes")){
+            total = regularPrice1;
+        } else if (size == 1 && choice.equals("No")){
             total = regularPrice;
-        } else if (size == 2) {
-            total = largePrice;
         }
+             else if (size == 2 && choice.equals("Yes")) {
+            total = largePrice1;
+        }
+                if (size == 2 && choice.equals("No")){
+                    total = largePrice;
+                }
 
         //Calculate total
         if(age <= 17){
@@ -77,27 +68,7 @@ public class SandwichShop {
             discount = .25;
         }
 
-        // Declare variables for loaded sandwich
-        double regularloadedSandwich = 6.45;
-        double largeloadedSandwich = 9.95;
-        double total1;
-        double discount1 = 0.0;
-
-        // Add if statements for total
-        if(answer == "Yes"){
-            total1 = regularloadedSandwich - (regularloadedSandwich * discount);
-        } else if (answer == "No") {
-            total1 = regularPrice;
-        }
-
-        // Total
-        if(size == 1 && age <= 17 && answer == "Yes")
-        total1 = regularloadedSandwich - (regularloadedSandwich * discount);
-        System.out.printf("Total: $%.2f%n", total1);
-
-
         //Total
-        if(size == 1 && age <= 17 && answer == "Yes")
         total = total - (total * discount);
         System.out.printf("Total: $%.2f%n", total);
 
